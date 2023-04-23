@@ -11,35 +11,9 @@
                     <label for="cargahoraria">Carga horária:</label>
                     <input type="text" class="form-control" id="email" name="email" [(ngModel)]="disciplina.cargaHoraria" required>
                 </div>
-                <button type="button" routerLink="/menu" class="btn btn-secondary my-3">Voltar</button>
+                <button type="button" routerLink="/consulta-disciplina" class="btn btn-secondary my-3">Voltar</button>
                 <button type="submit" class="btn btn-primary my-3 btn-cadastrar">Cadastrar</button>
             </form>        
-        </div>
-        <!-- <div class="col-sm-4 col-md-4 col-lg-4">
-            <table>
-                <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Actions</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr *ngFor="let user of users | paginate: { itemsPerPage: 10, currentPage: p, totalItems: total }">
-                    <td>{{ user.id }}</td>
-                    <td>{{ user.name }}</td>
-                    <td>{{ user.email }}</td>
-                    <td>
-                    <a routerLink="/user/{{ user.id }}">View</a>
-                    <a routerLink="/user/{{ user.id }}/edit">Edit</a>
-                    <a (click)="deleteUser(user.id)">Delete</a>
-                    </td>
-                </tr>
-                </tbody>
-            </table>
-            
-            <ngx-pagination [collectionSize]="total" [(page)]="p"></ngx-pagination>
-        </div> -->
+        </div>        
     </div>
 </div>

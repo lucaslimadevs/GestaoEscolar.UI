@@ -14,10 +14,8 @@ export class TokenService {
     localStorage.setItem('token', token);
   }
 
-  public getToken(): string | null {
-    if (!this.token) {
-      this.token = localStorage.getItem('token');
-    }
+  public getToken(): string | null {    
+    this.token = localStorage.getItem('token');    
     return this.token;
   }
 

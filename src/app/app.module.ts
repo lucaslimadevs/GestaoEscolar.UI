@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -14,6 +14,8 @@ import { TokenInterceptor } from './Interceptor/token-interceptor';
 import { MenuPrincipalComponent } from './pages/menu-principal/menu-principal.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CadastroDisciplinaComponent } from './pages/cadastro-disciplina/cadastro-disciplina.component';
+import { ConsultaDisciplinaComponent } from './pages/consulta-disciplina/consulta-disciplina.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import { CadastroDisciplinaComponent } from './pages/cadastro-disciplina/cadastr
     LoginComponent,
     CadastroUsuarioComponent,
     MenuPrincipalComponent,
-    CadastroDisciplinaComponent
+    CadastroDisciplinaComponent,
+    ConsultaDisciplinaComponent
   ],
   imports: [
     BrowserModule,
@@ -30,6 +33,7 @@ import { CadastroDisciplinaComponent } from './pages/cadastro-disciplina/cadastr
     FormsModule,
     HttpClientModule,
     FontAwesomeModule,
+    NgxPaginationModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
   ],
@@ -40,7 +44,8 @@ import { CadastroDisciplinaComponent } from './pages/cadastro-disciplina/cadastr
       multi: true
     }
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AppModule { 
 }

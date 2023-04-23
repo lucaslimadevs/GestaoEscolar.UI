@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { RegisterUserCommand } from 'src/app/Models/register-user-command';
 import { AuthService } from 'src/app/services/auth.service';
 import { catchError } from 'rxjs/operators';
 import { of } from 'rxjs';
+import { RegisterUserCommand } from 'src/app/Models/comands/register-user-command';
 
 @Component({
   selector: 'app-cadastro-usuario',
