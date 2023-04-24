@@ -3,7 +3,6 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from '../environments/environment';
 import { RegisterUserCommand } from '../Models/comands/register-user-command';
 
-
 @Injectable({
   providedIn: 'root'
 })
@@ -16,6 +15,10 @@ export class AuthService {
 
   register(user: RegisterUserCommand) {
     return this.http.post(`${environment.urlApi}/api/Auth/RegisterUser`, user);
+  }
+
+  buscarUsuarios() {
+    return this.http.get(`${environment.urlApi}/api/Auth/Usuarios`);
   }
 
   isLoggedIn() {

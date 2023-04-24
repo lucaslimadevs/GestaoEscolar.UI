@@ -16,6 +16,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CadastroDisciplinaComponent } from './pages/cadastro-disciplina/cadastro-disciplina.component';
 import { ConsultaDisciplinaComponent } from './pages/consulta-disciplina/consulta-disciplina.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { ConsultaTurmaComponent } from './pages/consulta-turma/consulta-turma.component';
+import { CadastroTurmaComponent } from './pages/cadastro-turma/cadastro-turma.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { NgxPaginationModule } from 'ngx-pagination';
     CadastroUsuarioComponent,
     MenuPrincipalComponent,
     CadastroDisciplinaComponent,
-    ConsultaDisciplinaComponent
+    ConsultaDisciplinaComponent,
+    ConsultaTurmaComponent,
+    CadastroTurmaComponent
   ],
   imports: [
     BrowserModule,

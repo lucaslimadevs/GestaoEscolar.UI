@@ -69,8 +69,7 @@ export class CadastroDisciplinaComponent implements OnInit {
             this.toastr.warning('', 'preencha os camposa para cadastrar');
           }
         });       
-    }else{
-      //Todo: alterar para editar
+    }else{      
       this.disciplinaService.editar(this.disciplina)
         .pipe(
           catchError((error) => {

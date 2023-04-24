@@ -19,9 +19,16 @@ export class DisciplinaService {
   }
 
   buscarTodos(filtro: FiltroGenerico) {
-    let params = new HttpParams()
+    var params;
+    
+    if (filtro.quantidadePorPagina){
+      params = new HttpParams()
       .set('Pagina', filtro.pagina)
-      .set('QuantidadePorPagina', filtro.quantidadePorPagina);
+      .set('QuantidadePorPagina', filtro.quantidadePorPagina ?? null);
+    }else{
+      params = new HttpParams()
+      .set('Pagina', filtro.pagina)
+    }        
 
     return this.http.get(`${environment.urlApi}/api/disciplina/findAll`, { params: params});
   }

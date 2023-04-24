@@ -1,0 +1,34 @@
+<div class="container my-5">
+    <div class="row justify-content-center align-items-center">
+        <h3>Usuario Turma</h3>
+        <div class="col-sm-12 col-md-12 col-lg-12">            
+            <button type="submit" class="btn btn-primary my-3 btn-opcoes" routerLink="/cadastra-turma">Cadastrar nova</button>
+            <button type="button" routerLink="/menu" class="btn btn-secondary mx-1 my-3 btn-opcoes">Voltar</button>
+
+            <table class="table table-bordered">
+                <thead>
+                    <tr>                            
+                        <th>Usuario</th>
+                        <th>tipo</th>
+                        <th>Disciplina</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let turma of turmas | paginate: { itemsPerPage: 20, currentPage: paginaAtual, totalItems: total }; let i = index">
+                        <td>{{ turma.nomeUsuario }}</td>
+                        <td>{{ turma.tipo }}</td>
+                        <td>{{ turma.nomeDisciplina }}</td>
+                        <td>                                
+                            <a [routerLink]="['/editar-turma', turma.id]">Edit</a> |
+                            <a routerLink="/consulta-turma" (click)="apagar(turma.id)">Delete</a> 
+                        </td>
+                    </tr>
+                </tbody>
+            </table>            
+            <div class="mr-4">
+                <pagination-controls (pageChange)="onPageChange($event)" [collectionSize]="total"></pagination-controls>
+            </div>
+        </div>
+    </div>
+</div>

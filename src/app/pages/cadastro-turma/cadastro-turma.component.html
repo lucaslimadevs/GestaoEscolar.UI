@@ -1,0 +1,23 @@
+<div class="container my-5">
+    <div class="row justify-content-center align-items-center">
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <h3><fa-icon [icon]="faPeopleGroup"></fa-icon> Cadastrar Usuário/Turma</h3>
+            <form (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <label for="usuario">Usuário:</label>                    
+                    <select class="form-control" [(ngModel)]="usuarioSelectedValue" name="usuario">
+                      <option *ngFor="let usuario of usuarios" [ngValue]="usuario.id">{{usuario.nome}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="disciplina">Disciplina:</label>
+                    <select class="form-control" [(ngModel)]="disciplinaSelectedValue" name="disciplina">
+                      <option *ngFor="let disciplina of disciplinas" [value]="disciplina.id">{{disciplina.nome}}</option>
+                    </select>
+                </div>
+                <button type="button" routerLink="/consulta-turma" class="btn btn-secondary my-3">Voltar</button>
+                <button type="submit" class="btn btn-primary my-3 btn-cadastrar">Cadastrar</button>
+            </form>        
+        </div>        
+    </div>
+</div>
