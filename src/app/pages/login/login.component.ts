@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { AuthService } from 'src/app/services/auth.service';
@@ -11,7 +11,7 @@ import { faSchool } from '@fortawesome/free-solid-svg-icons'
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
   public username: string = "";
   public password: string = "";
   faSchool=faSchool;
@@ -24,6 +24,10 @@ export class LoginComponent {
     this.auth = auth;
     this.router = router;
     this.toastr = toastr;
+  }
+  
+  ngOnInit(): void {
+    localStorage.clear();
   }
 
   onSubmit() {

@@ -5,5 +5,17 @@
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<nav *ngIf="isLoggedIn()" class="navbar navbar-expand-lg avbar-light bg-light">
+    <div class="container">
+        <a class="navbar-brand mx-2" routerLink="/menu"><fa-icon [icon]="faSchool"></fa-icon> Gestão Escolar API</a>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link mx-3" (click)="sair()"><fa-icon [icon]="faDoorOpen"></fa-icon> sair</a>
+            </li>
+            </ul>
+        </div>
+    </div>
+</nav>
 
 <router-outlet></router-outlet>
