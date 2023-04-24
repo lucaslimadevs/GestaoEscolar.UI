@@ -36,7 +36,7 @@ export class LoginComponent {
       )
       .subscribe((data: any) => {
         if (data && data.accessToken){
-          localStorage.setItem('token', data.accessToken);
+          this.auth.saveTokenInfo(data);          
           this.router.navigateByUrl('/menu');          
         }else{
           this.toastr.warning('', 'usuário ou senha incorretos');

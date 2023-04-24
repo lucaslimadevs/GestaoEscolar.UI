@@ -137,5 +137,4 @@ export class CadastroTurmaComponent implements OnInit {
     this.usuarioSelectedValue = '';    
     this.disciplinaSelectedValue = '';
   }
-
 }

@@ -22,6 +22,23 @@ export class AuthService {
   }
 
   isLoggedIn() {
-    return !!localStorage.getItem('token');
+    return localStorage.getItem('token') !== null && !this.isTokenExpired();
+  }
+
+  saveTokenInfo(data: any) {
+    localStorage.setItem('token', data.accessToken);
+    const expiresIn = Number(data.expiresIn);    
+    const expirationDate = new Date().getTime() + expiresIn * 1000;
+    localStorage.setItem('expirationDate', expirationDate.toString());
+  }
+
+  private isTokenExpired(): boolean {
+    const expirationDate = Number(localStorage.getItem('expirationDate'));      
+
+    if (!expirationDate) {
+      return true;
+    }
+    const expiration = new Date(Number(expirationDate));
+    return expiration.getTime() <= new Date().getTime();
   }
 }

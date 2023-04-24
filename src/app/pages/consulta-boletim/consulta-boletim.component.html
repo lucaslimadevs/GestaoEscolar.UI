@@ -1,0 +1,32 @@
+<div class="container my-5">
+    <div class="row justify-content-center align-items-center">
+        <h3>Boletins</h3>
+        <div class="col-sm-12 col-md-12 col-lg-12">            
+            <button type="submit" class="btn btn-primary my-3 btn-opcoes" routerLink="/cadastra-boletim">Cadastrar novo</button>
+            <button type="button" routerLink="/menu" class="btn btn-secondary mx-1 my-3 btn-opcoes">Voltar</button>
+
+            <table class="table table-bordered">
+                <thead>
+                    <tr>                            
+                        <th>Aluno</th>
+                        <th>Data Entrega</th>                        
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let boletim of boletins | paginate: { itemsPerPage: 20, currentPage: paginaAtual, totalItems: total }; let i = index">
+                        <td>{{ boletim.nomeUsuario }}</td>
+                        <td>{{ boletim.dataEntrega | date:"dd/MM/YYYY" }}</td>                        
+                        <td>                                
+                            <a [routerLink]="['/editar-boletim', boletim.id]">Edit</a> |
+                            <a routerLink="/consulta-boletim" (click)="apagar(boletim.id)">Delete</a> 
+                        </td>
+                    </tr>
+                </tbody>
+            </table>            
+            <div class="mr-4">
+                <pagination-controls (pageChange)="onPageChange($event)" [collectionSize]="total"></pagination-controls>
+            </div>
+        </div>
+    </div>
+</div>

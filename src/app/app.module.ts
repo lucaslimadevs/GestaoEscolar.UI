@@ -18,6 +18,9 @@ import { ConsultaDisciplinaComponent } from './pages/consulta-disciplina/consult
 import { NgxPaginationModule } from 'ngx-pagination';
 import { ConsultaTurmaComponent } from './pages/consulta-turma/consulta-turma.component';
 import { CadastroTurmaComponent } from './pages/cadastro-turma/cadastro-turma.component';
+import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
+import { ConsultaBoletimComponent } from './pages/consulta-boletim/consulta-boletim.component';
+import { CadastraBoletimComponent } from './pages/cadastra-boletim/cadastra-boletim.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +31,8 @@ import { CadastroTurmaComponent } from './pages/cadastro-turma/cadastro-turma.co
     CadastroDisciplinaComponent,
     ConsultaDisciplinaComponent,
     ConsultaTurmaComponent,
-    CadastroTurmaComponent
+    CadastroTurmaComponent,    
+    PageNotFoundComponent, ConsultaBoletimComponent, CadastraBoletimComponent
   ],
   imports: [
     BrowserModule,

@@ -7,18 +7,26 @@ import { CadastroDisciplinaComponent } from './pages/cadastro-disciplina/cadastr
 import { ConsultaDisciplinaComponent } from './pages/consulta-disciplina/consulta-disciplina.component';
 import { ConsultaTurmaComponent } from './pages/consulta-turma/consulta-turma.component';
 import { CadastroTurmaComponent } from './pages/cadastro-turma/cadastro-turma.component';
+import { AuthGuardService } from './services/auth-guard.service';
+import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
+import { ConsultaBoletimComponent } from './pages/consulta-boletim/consulta-boletim.component';
+import { CadastraBoletimComponent } from './pages/cadastra-boletim/cadastra-boletim.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'registro', component: CadastroUsuarioComponent },
-  { path: 'menu', component: MenuPrincipalComponent },
-  { path: 'cadastra-disciplina', component: CadastroDisciplinaComponent },
-  { path: 'editar-disciplina/:id', component: CadastroDisciplinaComponent },
-  { path: 'consulta-disciplina', component: ConsultaDisciplinaComponent },
-  { path: 'consulta-turma', component: ConsultaTurmaComponent },
-  { path: 'cadastra-turma', component: CadastroTurmaComponent },
-  { path: 'editar-turma/:id', component: CadastroTurmaComponent },
+  { path: 'menu', component: MenuPrincipalComponent, canActivate: [AuthGuardService] },
+  { path: 'cadastra-disciplina', component: CadastroDisciplinaComponent , canActivate: [AuthGuardService] },
+  { path: 'editar-disciplina/:id', component: CadastroDisciplinaComponent , canActivate: [AuthGuardService] },
+  { path: 'consulta-disciplina', component: ConsultaDisciplinaComponent, canActivate: [AuthGuardService] }, 
+  { path: 'consulta-turma', component: ConsultaTurmaComponent , canActivate: [AuthGuardService] },
+  { path: 'cadastra-turma', component: CadastroTurmaComponent , canActivate: [AuthGuardService] },
+  { path: 'editar-turma/:id', component: CadastroTurmaComponent , canActivate: [AuthGuardService] },
+  { path: 'consulta-boletim', component: ConsultaBoletimComponent , canActivate: [AuthGuardService] },
+  { path: 'cadastra-boletim', component: CadastraBoletimComponent , canActivate: [AuthGuardService] },
+  { path: 'editar-boletim/:id', component: CadastraBoletimComponent , canActivate: [AuthGuardService] },
+  { path: '**', component: PageNotFoundComponent , canActivate: [AuthGuardService]}
 ];
 
 @NgModule({
