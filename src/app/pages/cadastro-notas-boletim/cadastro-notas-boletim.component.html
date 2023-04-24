@@ -1,0 +1,36 @@
+<div class="container my-5">
+    <div class="row justify-content-center align-items-center">
+        
+            <h3><fa-icon [icon]="faListNumeric"></fa-icon> Cadastrar Nota do Boletim</h3>
+            <form (ngSubmit)="onSubmit()">
+                <div class="row">
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                        <label for="turma">Disciplina (Turma):</label>                    
+                        <select class="form-control" [(ngModel)]="turmaSelectedValue" name="turma">
+                          <option *ngFor="let turma of turmas" [ngValue]="turma.id">{{turma.nomeDisciplina}}</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                        <label for="boletim">Boletim:</label>
+                        <select class="form-control" [(ngModel)]="boletimSelectedValue" name="boletim">
+                          <option *ngFor="let boletim of boletims" [value]="boletim.id">{{boletim.nomeUsuario}} - Entrega: {{boletim.dataEntrega | date:"dd/MM/YYYY" }}</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                        <label for="nota">Nota:</label>
+                        <input type="number" class="form-control" [(ngModel)]="notasboletim.nota" name="nota">
+                    </div>
+                </div>            
+                <button type="button" routerLink="/consulta-notas-boletim" class="btn btn-secondary my-3">Voltar</button>
+                <button type="submit" class="btn btn-primary my-3 btn-cadastrar">Cadastrar</button>                
+            </form>        
+        
+    </div>
+</div>
+
+
+
+
+
+
+

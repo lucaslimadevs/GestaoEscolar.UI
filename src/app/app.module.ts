@@ -21,6 +21,7 @@ import { CadastroTurmaComponent } from './pages/cadastro-turma/cadastro-turma.co
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { ConsultaBoletimComponent } from './pages/consulta-boletim/consulta-boletim.component';
 import { CadastraBoletimComponent } from './pages/cadastra-boletim/cadastra-boletim.component';
+import { CadastroNotasBoletimComponent } from './pages/cadastro-notas-boletim/cadastro-notas-boletim.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,10 @@ import { CadastraBoletimComponent } from './pages/cadastra-boletim/cadastra-bole
     ConsultaDisciplinaComponent,
     ConsultaTurmaComponent,
     CadastroTurmaComponent,    
-    PageNotFoundComponent, ConsultaBoletimComponent, CadastraBoletimComponent
+    PageNotFoundComponent, 
+    ConsultaBoletimComponent, 
+    CadastraBoletimComponent, 
+    CadastroNotasBoletimComponent,
   ],
   imports: [
     BrowserModule,

@@ -82,7 +82,7 @@ export class CadastroDisciplinaComponent implements OnInit {
             this.toastr.success('', 'Disciplina editada com sucesso!');    
             this.limparCampos();
           }else{
-            this.toastr.warning('', 'preencha os camposa para editar');
+            this.toastr.warning('', 'preencha os campos para editar');
           }
 
           this.edicao = false;

@@ -97,7 +97,7 @@ export class CadastraBoletimComponent implements OnInit {
             this.toastr.success('', 'Boletim editada com sucesso!');    
             this.limparCampos();
           }else{
-            this.toastr.warning('', 'preencha os camposa para editar');
+            this.toastr.warning('', 'preencha os campos para editar');
           }
 
           this.edicao = false;

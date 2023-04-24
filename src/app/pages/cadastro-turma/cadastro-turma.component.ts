@@ -17,7 +17,7 @@ import { TurmaService } from 'src/app/services/turma.service';
   styleUrls: ['./cadastro-turma.component.css']
 })
 export class CadastroTurmaComponent implements OnInit {
-  turma: InsertTurmaCommand = new InsertTurmaCommand;  
+  turma: InsertTurmaCommand = new InsertTurmaCommand;
   faPeopleGroup = faPeopleGroup;
   users: any[] = [];
   p: number = 1;
@@ -103,7 +103,7 @@ export class CadastroTurmaComponent implements OnInit {
             this.toastr.success('', 'Turma editada com sucesso!');    
             this.limparCampos();
           }else{
-            this.toastr.warning('', 'preencha os camposa para editar');
+            this.toastr.warning('', 'preencha os campos para editar');
           }
 
           this.edicao = false;

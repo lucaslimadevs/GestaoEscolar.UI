@@ -11,6 +11,7 @@ import { AuthGuardService } from './services/auth-guard.service';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { ConsultaBoletimComponent } from './pages/consulta-boletim/consulta-boletim.component';
 import { CadastraBoletimComponent } from './pages/cadastra-boletim/cadastra-boletim.component';
+import { CadastroNotasBoletimComponent } from './pages/cadastro-notas-boletim/cadastro-notas-boletim.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -26,6 +27,7 @@ const routes: Routes = [
   { path: 'consulta-boletim', component: ConsultaBoletimComponent , canActivate: [AuthGuardService] },
   { path: 'cadastra-boletim', component: CadastraBoletimComponent , canActivate: [AuthGuardService] },
   { path: 'editar-boletim/:id', component: CadastraBoletimComponent , canActivate: [AuthGuardService] },
+  { path: 'cadastro-boletim', component: CadastroNotasBoletimComponent , canActivate: [AuthGuardService] },
   { path: '**', component: PageNotFoundComponent , canActivate: [AuthGuardService]}
 ];
 
