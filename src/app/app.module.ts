@@ -22,6 +22,7 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
 import { ConsultaBoletimComponent } from './pages/consulta-boletim/consulta-boletim.component';
 import { CadastraBoletimComponent } from './pages/cadastra-boletim/cadastra-boletim.component';
 import { CadastroNotasBoletimComponent } from './pages/cadastro-notas-boletim/cadastro-notas-boletim.component';
+import { ConsultaNotasBoletimComponent } from './pages/consulta-notas-boletim/consulta-notas-boletim.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,7 @@ import { CadastroNotasBoletimComponent } from './pages/cadastro-notas-boletim/ca
     PageNotFoundComponent, 
     ConsultaBoletimComponent, 
     CadastraBoletimComponent, 
-    CadastroNotasBoletimComponent,
+    CadastroNotasBoletimComponent, ConsultaNotasBoletimComponent,
   ],
   imports: [
     BrowserModule,

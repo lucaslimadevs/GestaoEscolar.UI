@@ -1,25 +1,27 @@
 <div class="container my-5">
     <div class="row justify-content-center align-items-center">
-        <h3>Disciplinas</h3>
+        <h3>Notas boletim</h3>
         <div class="col-sm-12 col-md-12 col-lg-12">            
-            <button type="submit" class="btn btn-primary my-3 btn-opcoes" routerLink="/cadastra-disciplina">Cadastrar nova</button>
+            <button type="submit" class="btn btn-primary my-3 btn-opcoes" routerLink="/cadastro-notas-boletim">Cadastrar nova</button>
             <button type="button" routerLink="/menu" class="btn btn-secondary mx-1 my-3">Voltar</button>
 
             <table class="table table-bordered">
                 <thead>
                     <tr>                            
-                        <th>Nome</th>
-                        <th>Carga Horaria</th>
+                        <th>Aluno</th>
+                        <th>Disciplina</th>
+                        <th>Nota</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let disciplina of disciplinas | paginate: { itemsPerPage: 20, currentPage: paginaAtual, totalItems: total }; let i = index">
-                        <td>{{ disciplina.nome }}</td>
-                        <td>{{ disciplina.cargaHoraria }}</td>
+                    <tr *ngFor="let notasBoletim of notasBoletims | paginate: { itemsPerPage: 20, currentPage: paginaAtual, totalItems: total }; let i = index">
+                        <td>{{ notasBoletim.nomeUsuario }}</td>
+                        <td>{{ notasBoletim.nomeDisciplina }}</td>
+                        <td>{{ notasBoletim.nota }}</td>
                         <td>                                
-                            <a [routerLink]="['/editar-disciplina', disciplina.id]">Edit</a> |
-                            <a routerLink="/consulta-disciplina" (click)="apagar(disciplina.id)">Delete</a> 
+                            <a [routerLink]="['/editar-notas-boletim', notasBoletim.id]">Edit</a> |
+                            <a routerLink="/consulta-notas-boletim" (click)="apagar(notasBoletim.id)">Delete</a> 
                         </td>
                     </tr>
                 </tbody>

@@ -1,4 +1,4 @@
-<div *ngIf="ehProfessor() && temNotificacao()" class="d-flex justify-content-center align-items-center my-2">
+<div *ngIf="!ehProfessor() && temNotificacao()" class="d-flex justify-content-center align-items-center my-2">
     <div class="btn-group-vertical" style="width: 500px;">
         <h6>Notificações</h6>
         <button class="btn btn-secondary btn-sm mb-1 btn-limpar-notificacoes" (click)="clearNotifications()" style="width: auto;">Limpar Notificações</button>    
@@ -19,6 +19,6 @@
       <button type="button" class="btn btn-outline-primary btn-lg btn-block" routerLink="/consulta-disciplina">Disciplinas</button>      
       <button type="button" class="btn btn-outline-primary btn-lg btn-block" routerLink="/consulta-turma">Usuario/Turma</button>
       <button type="button" class="btn btn-outline-primary btn-lg btn-block" routerLink="/consulta-boletim">Boletins</button>
-      <button type="button" class="btn btn-outline-primary btn-lg btn-block" routerLink="/cadastro-boletim">Lançar Nota Aluno</button>
+      <button type="button" class="btn btn-outline-primary btn-lg btn-block" routerLink="/consulta-notas-boletim">Lançar Nota Aluno</button>
     </div>
 </div>

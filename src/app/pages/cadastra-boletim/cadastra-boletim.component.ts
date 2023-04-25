@@ -53,8 +53,7 @@ export class CadastraBoletimComponent implements OnInit {
           return of(null);
         })
       )
-      .subscribe((data: any) => {
-        debugger
+      .subscribe((data: any) => {        
         const dataFormatada = data.dataEntrega.toString().substr(0, 10);
 
         this.boletim.id = data.id;

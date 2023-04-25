@@ -76,9 +76,14 @@ export class CadastroNotasBoletimComponent implements OnInit {
 
   onSubmit() {
     this.notasboletim.idTurma = this.turmaSelectedValue;
-    this.notasboletim.idBoletim = this.boletimSelectedValue;
-
-    debugger;
+    this.notasboletim.idBoletim = this.boletimSelectedValue;                 
+    
+    var boletim = this.boletims.find(e => e.id === this.boletimSelectedValue);
+    this.notasboletim.idUsuario = boletim?.idUsuario ?? '';
+    
+    var turma = this.turmas.find(e => e.id === this.turmaSelectedValue);
+    this.notasboletim.idDisciplina = turma?.idDisciplina ?? '';
+    
     if((this.notasboletim.nota ?? 0) > 10.00){
       this.toastr.error('', 'Nota máxima é 10');
       return;

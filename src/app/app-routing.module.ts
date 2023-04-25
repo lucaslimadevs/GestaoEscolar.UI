@@ -12,6 +12,7 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
 import { ConsultaBoletimComponent } from './pages/consulta-boletim/consulta-boletim.component';
 import { CadastraBoletimComponent } from './pages/cadastra-boletim/cadastra-boletim.component';
 import { CadastroNotasBoletimComponent } from './pages/cadastro-notas-boletim/cadastro-notas-boletim.component';
+import { ConsultaNotasBoletimComponent } from './pages/consulta-notas-boletim/consulta-notas-boletim.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -27,8 +28,10 @@ const routes: Routes = [
   { path: 'consulta-boletim', component: ConsultaBoletimComponent , canActivate: [AuthGuardService] },
   { path: 'cadastra-boletim', component: CadastraBoletimComponent , canActivate: [AuthGuardService] },
   { path: 'editar-boletim/:id', component: CadastraBoletimComponent , canActivate: [AuthGuardService] },
-  { path: 'cadastro-boletim', component: CadastroNotasBoletimComponent , canActivate: [AuthGuardService] },
-  { path: '**', component: PageNotFoundComponent , canActivate: [AuthGuardService]}
+  { path: 'cadastro-notas-boletim', component: CadastroNotasBoletimComponent , canActivate: [AuthGuardService] },
+  { path: 'editar-notas-boletim/:id', component: CadastroNotasBoletimComponent , canActivate: [AuthGuardService] },
+  { path: 'consulta-notas-boletim', component: ConsultaNotasBoletimComponent , canActivate: [AuthGuardService] },
+  { path: '**', component: PageNotFoundComponent , canActivate: [AuthGuardService]}  
 ];
 
 @NgModule({

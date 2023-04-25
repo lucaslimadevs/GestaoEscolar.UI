@@ -8,7 +8,7 @@ export class NotificationService {
 
   constructor() {}
 
-  addNotification(notification: any) {
+  addNotification(notification: any) {    
     this.notifications.push(notification);
   }
 

@@ -2,7 +2,7 @@
     <div class="row justify-content-center align-items-center">
       <div class="col-sm-4 col-md-4 col-lg-4">
         <h3>Cadastrar Usuário</h3>
-        <form class="was-validated" (ngSubmit)="onSubmit()" novalidate>
+        <form (ngSubmit)="onSubmit()">
             <div class="form-group">
                 <label for="nome">Nome:</label>
                 <input type="text" class="form-control" id="nome" name="nome" [(ngModel)]="registerUser.nome" required>                
