@@ -30,6 +30,8 @@ export class CadastroUsuarioComponent implements OnInit {
   }
 
   onSubmit() {
+    if (!this.camposValidos()) return;
+
     this.auth.register(this.registerUser)
       .pipe(
         catchError((error) => {
@@ -46,4 +48,49 @@ export class CadastroUsuarioComponent implements OnInit {
         }
       });       
   }
+
+  camposValidos(): boolean{
+    if (!this.registerUser.nome.trim()){
+      this.toastr.info("Preencha Nome para cadastrar");
+      return false;
+    }
+
+    if (!this.registerUser.email.trim()){
+      this.toastr.info("Preencha Email para cadastrar");
+      return false;
+    }
+
+    if (!this.registerUser.password.trim()){
+      this.toastr.info("Preencha Senha para cadastrar");
+      return false;
+    }
+
+    if (!this.registerUser.confirmPassword.trim()){
+      this.toastr.info("Preencha Confirmar Senha para cadastrar");
+      return false;
+    }
+
+    if (!this.registerUser.dataNascimento){
+      this.toastr.info("Preencha Data Nascimento para cadastrar");
+      return false;
+    }
+
+    if (!this.registerUser.tipo){
+      this.toastr.info("Preencha Tipo de Usuário para cadastrar");
+      return false;
+    }
+
+    if (this.registerUser.password != this.registerUser.confirmPassword){
+      this.toastr.info("Senhas não correspondem!");
+      return false;
+    }
+
+    if (this.registerUser.password.length < 5){
+      this.toastr.info("Senha deve possuir mais de Seis caracteres");
+      return false;
+    }
+
+    return true;
+  }
+
 }
