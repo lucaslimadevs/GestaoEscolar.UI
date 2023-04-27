@@ -75,6 +75,8 @@ export class CadastroNotasBoletimComponent implements OnInit {
   }
 
   onSubmit() {
+    if (!this.camposValidos()) return;
+
     this.notasboletim.idTurma = this.turmaSelectedValue;
     this.notasboletim.idBoletim = this.boletimSelectedValue;                 
     
@@ -124,6 +126,25 @@ export class CadastroNotasBoletimComponent implements OnInit {
           this.edicao = false;
         });
     }
+  }
+
+  camposValidos(): boolean{
+    if (!this.boletimSelectedValue.trim()){
+      this.toastr.info("Preencha Boletim para cadastrar");
+      return false;
+    }
+
+    if (!this.turmaSelectedValue.trim()){
+      this.toastr.info("Preencha Disciplina (Turma) para cadastrar");
+      return false;
+    }
+
+    if (!this.notasboletim.nota){
+      this.toastr.info("Preencha Nota para cadastrar");
+      return false;
+    }
+
+    return true;
   }
 
   buscarTurmas(){    

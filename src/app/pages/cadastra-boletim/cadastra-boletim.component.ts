@@ -65,6 +65,8 @@ export class CadastraBoletimComponent implements OnInit {
   }
 
   onSubmit() {
+    if (!this.camposValidos()) return;
+    
     this.boletim.idUsuario = this.usuarioSelectedValue;    
 
     if (!this.edicao){
@@ -102,6 +104,20 @@ export class CadastraBoletimComponent implements OnInit {
           this.edicao = false;
         });
     }
+  }
+
+  camposValidos(): boolean{
+    if (!this.usuarioSelectedValue.trim()){
+      this.toastr.info("Preencha Usuário para cadastrar");
+      return false;
+    }
+
+    if (!this.boletim.dataEntrega){
+      this.toastr.info("Preencha Data de Entrega para cadastrar");
+      return false;
+    }
+
+    return true;
   }
 
   buscarUsuarios(){

@@ -71,6 +71,8 @@ export class CadastroTurmaComponent implements OnInit {
   }
 
   onSubmit() {
+    if (!this.camposValidos()) return;
+
     this.turma.idUsuario = this.usuarioSelectedValue;
     this.turma.idDisciplina = this.disciplinaSelectedValue;
 
@@ -109,6 +111,20 @@ export class CadastroTurmaComponent implements OnInit {
           this.edicao = false;
         });
     }
+  }
+
+  camposValidos(): boolean{
+    if (!this.usuarioSelectedValue.trim()){
+      this.toastr.info("Preencha Usuário para cadastrar");
+      return false;
+    }
+
+    if (!this.disciplinaSelectedValue.trim()){
+      this.toastr.info("Preencha Disciplina para cadastrar");
+      return false;
+    }
+
+    return true;
   }
 
   buscarUsuarios(){

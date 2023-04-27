@@ -53,6 +53,9 @@ export class CadastroDisciplinaComponent implements OnInit {
   }
 
   onSubmit() {
+    
+    if (!this.camposValidos()) return;    
+
     if (!this.edicao){
       this.disciplinaService.salvar(this.disciplina)
         .pipe(
@@ -88,6 +91,20 @@ export class CadastroDisciplinaComponent implements OnInit {
           this.edicao = false;
         });
     }
+  }
+
+  camposValidos(): boolean{    
+    if (!this.disciplina.nome.trim()){
+      this.toastr.info("Preencha Nome para cadastrar");
+      return false;
+    }
+
+    if (!this.disciplina.cargaHoraria.trim()){
+      this.toastr.info("Preencha Carga Horária para cadastrar");
+      return false;
+    }
+
+    return true;
   }
 
   limparCampos() {
